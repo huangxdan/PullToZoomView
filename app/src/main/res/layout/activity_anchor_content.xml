@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/gray"
+    android:layout_height="match_parent">
+
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/ctl_club_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_40dp_hf"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/default_40dp_hf"
+        android:paddingRight="@dimen/default_40dp_hf"
+        app:tl_iconVisible="false"
+        app:tl_indicator_color="@color/hot_title"
+        app:tl_textSelectColor="#FDC731"
+        app:tl_textUnselectColor="#323232"
+        app:tl_indicator_corner_radius="1.5dp"
+        app:tl_indicator_height="2dp"
+        app:tl_indicator_style="NORMAL"
+        app:tl_indicator_width="@dimen/default_34dp_hf"
+        app:tl_textsize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_fans"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_50dp_hf"
+        android:layout_marginTop="@dimen/default_5dp_hf"
+        android:layout_below="@id/ctl_club_tab"
+        android:background="@drawable/item_setting_selector">
+
+        <ImageView
+            android:id="@+id/iv_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/default_12dp_hf"
+            android:background="@drawable/icon_paihangbang" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/default_8dp_hf"
+            android:layout_toRightOf="@id/iv_sort"
+            android:text="粉丝贡献榜"
+            android:textColor="#323232"
+            android:textSize="@dimen/default_13sp_hf" />
+
+        <ImageView
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/default_10dp_hf"
+            android:background="@drawable/icon_yfh" />
+
+        <com.hefan.pulltozoomview.view.CircleImageView
+            android:id="@+id/civ_fans_y3"
+            android:layout_width="@dimen/default_36dp_hf"
+            android:layout_height="@dimen/default_36dp_hf"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/default_10dp_hf"
+            android:layout_toLeftOf="@id/more"
+            android:src="@drawable/icon_qiuzan"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/default_1dp_hf" />
+
+        <com.hefan.pulltozoomview.view.CircleImageView
+            android:id="@+id/civ_fans_y2"
+            android:layout_width="@dimen/default_36dp_hf"
+            android:layout_height="@dimen/default_36dp_hf"
+            android:layout_alignEnd="@+id/civ_fans_y3"
+            android:layout_alignTop="@+id/civ_fans_y3"
+            android:layout_marginEnd="@dimen/default_26dp_hf"
+            android:layout_marginRight="@dimen/default_15dp_hf"
+            android:src="@drawable/icon_qiuzan"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/default_1dp_hf" />
+
+        <com.hefan.pulltozoomview.view.CircleImageView
+            android:id="@+id/civ_fans_y1"
+            android:layout_width="@dimen/default_36dp_hf"
+            android:layout_height="@dimen/default_36dp_hf"
+            android:layout_alignEnd="@+id/civ_fans_y2"
+            android:layout_alignTop="@+id/civ_fans_y2"
+            android:layout_marginEnd="@dimen/default_26dp_hf"
+            android:layout_marginRight="@dimen/default_15dp_hf"
+            android:src="@drawable/icon_qiuzan"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/default_1dp_hf" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_0.5dp_hf"
+            android:background="@color/view_line" />
+
+        <include
+            layout="@layout/add_attent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_48dp_hf"
+            />
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_club_tab"
+        android:layout_width="match_parent"
+        android:layout_below="@id/rl_fans"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_bottom_layout"/>
+
+</RelativeLayout>
